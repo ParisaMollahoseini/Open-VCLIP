@@ -116,6 +116,14 @@ def load(name: str, device: Union[str, torch.device] = "cuda" if torch.cuda.is_a
     """
     if name in _MODELS:
         model_path = _download(_MODELS[name], download_root or os.path.expanduser("~/.cache/clip"))
+        # print('======================================')
+        # print('======================================')
+        # print('======================================')
+        # print('path of model:',model_path)
+        # print(download_root)
+        # print('======================================')
+        # print('======================================')
+        # print('======================================')
     elif os.path.isfile(name):
         model_path = name
     else:
