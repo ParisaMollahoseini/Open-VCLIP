@@ -305,9 +305,11 @@ def test(cfg):
                     # pop some unnessesary keys
                     _ = [clip_ori_state.pop(i) for i in ['input_resolution', 'context_length', 'vocab_size']]
                     raw_clip_flag = True
+                    logger.info("\n\n\n\n\n\nraw_clip_flag is True \n\n\n\n\n\n\n\n\n")
                 except:
                     clip_ori_state = torch.load(cfg.TEST.CLIP_ORI_PATH, map_location='cpu')['model_state']
                     raw_clip_flag = False
+                    logger.info("\n\n\n\n\n\nraw_clip_flag is False \n\n\n\n\n\n\n\n\n")
                 
                 logger.info("model contains %d keys for patching"%len(checkpoint_model)) 
                 logger.info("original clip model contains %d keys"%len(clip_ori_state))
@@ -354,6 +356,9 @@ def test(cfg):
                         patching_checkpoint_model[key] = checkpoint_model[key]
 
                 checkpoint_model = patching_checkpoint_model
+
+            # else:
+            #     logger.info("if didnt run suse suse")
 
             if 'module' in list(state_dict.keys())[0]:
                 new_checkpoint_model = {} 
