@@ -47,7 +47,7 @@ We upload the checkpoints of Open-VCLIP, which can be downloaded through the fol
 - **Kinetics-600 testing.**
 
   Validation data of Kinetics-600 we used can be donwloaded from [`link`](https://pan.baidu.com/s/1d6wI-n3igMdE1rJ2xP2MsA?pwd=c5mu ).
-
+# if your GPU ram is low, change TEST.BATCH_SIZE.
 # Training
 
 Training scripts of OpenVCLIP are provided in **/script/training**. An example script can be viewed bellow. After that, you can run **weight_average.py** to perform the SWA operations.
